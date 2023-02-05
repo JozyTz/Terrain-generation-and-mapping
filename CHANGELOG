@@ -1,0 +1,101 @@
+Jonnathon Blanchard
+
+9/2/22
+Started Project
+Setup variables
+Created base map generator which initializes a grid with EMPTY ('E') characters
+
+9/3/22
+Created map printing/color methods
+Created map border method
+Created map entrances methods
+Started work on biome seeding
+Reworked other methods to reduce variables/make more generalized functions
+Created helper method to get random number betweeen two bounds
+
+9/4/22
+Completed biome generation
+Fleshed out the colors fully so everything looks nice
+Started path generation
+
+9/5/22
+Fixed biome generation, tweaked values to make it look nicer
+Worked on path generation methods, shortest cardinal distance from starting point to a target
+Started work on adding buildings
+Started work onn adding random objects
+
+9/6/22
+Debug floatingpoint errors and other various coredump issues
+Completed path generation methods
+fixed biome generation (..again)
+Completed adding buildings methods
+
+9/7/22
+Fix buildings methods edgee cases so user doesn't walk through obstacles
+fix path generation (..again)
+Documentation
+Testing
+
+===============================================================
+
+9/9/22
+Refactor map_generator to make a struct for the GameMap
+Update methods to use this struct and use pointers
+
+9/11/22
+Create WorldMap struct to hold an array of GameMaps, as well as the coordinates
+Update existing methods to use pointers from the WorldMap to the GameMap
+
+9/12/22
+Created the map_navigation file and update other files to be included in it
+created an initWorld method to set the WorldMap data to NULL, able to print the center map
+
+9/13/22
+Created the moveMaps methods and tweaked the entrance methods to prevent entrances from being made on the world border
+Got movemaps working, able to genereate new maps, old maps show in same locations, and entrances line up
+
+9/14/22
+Fixed the createPaths methods to accomadate a possible lack of entrance (borders)
+Added a building probability functionality
+Added the quit/delete world functionality
+Bugfixing segmentation faults (mostly out of bound stuff)
+Edge testing, bugfixing
+
+===============================================================
+
+9/20/22
+Added terrain enums
+added structs for players, mobs, and distancemaps
+
+9/23/22
+updated methods for terrain enums
+pulled heap code to project
+
+9/24/22
+wrote base dijkstras method into pathfinder file
+fixed headers/declaration bugs
+
+9/25/22
+added hiker/rival terrain weighting
+added printout for distance maps iinto dijkstras
+added more enum types, mountain, forest, entrance
+
+9/26/22
+added a distance map key to the running game - 'd'
+added random playerchar location on first map, player declared in WorldMap so its global
+updated the paths methods to account for new ENTRANCE terrain type
+
+9/27/22
+Fixed memory leaks/bugs via valgrind
+edge/force testing
+updated print methods
+
+9/28/22
+Wrote makefile
+updated readme
+Cleaned up duplicate/unneeded code a little bit
+documented new code
+
+===============================================================
+
+

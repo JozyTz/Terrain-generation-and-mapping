@@ -1,0 +1,75 @@
+Jonnathon Blanchard
+
+Setup:
+make -f Makefile then /mapgen
+
+Commands:
+      - n moves 1 map north
+      - s moves 1 map south
+      - w moves 1 map west
+      - e moves 1 map east
+      - f y x moves the map to the given y, x coordinates
+      - q quits the game and clears the map memory
+      - d displays distance maps between player and all points
+
+Terrain Generation
+This program randomly generates a game map for use in the ASCII pokemon game
+    * The map is 80 wide x 21 tall
+    * Two paths, a north/south and a east/west, pass through the map and intersect at a common point
+    	- Paths denoted by '#'
+    * A 2x2 pokemon center and a 2x2 pokemart are added to the map randomly and are accessible without 
+      going through tallgrass(':') or boulders('%')
+    * The map will always contain at least two clearings('.') and two tallgrass(':') regions provided
+      the number of regions is set to be 4 or higher.
+    	- The regions are seeded, and sometimes the seeds grow together so it appears as one region. 
+    	  However there are still two region seeds and should be considered as two distinct regions
+    * The map is bordered by boulders('%')
+    * The map contains 1 exit on each cardinal direction which goes through the border
+    * The map contains scattered rocks and trees randomly placed
+    * The map contains two additional region types: mountain and forest.
+    * The map is colored
+
+====================================================================================
+
+Moving map to map
+The goal of this is being able to move around to different maps in a 401 x 41 world
+    * If the wrong input is given, a text alert shows and lets you type again
+    * If a move would be off the world, an alert appears and the last map is printed again
+    * The world is 401 x 401, going from 0 - 400 in the x and y direction
+    * The starting point is (200, 200)
+    * The current map coordinates are displayed below the map
+    * The frequency of pokemarts and pokecenters decreases exponentially from 100% at the center and levels out around 10% at the edges
+    * Adjacent map entrances line up
+    * A map location is NULL until visited
+    * Visited maps are saved and can be revisited
+    * Maps on the edge of the world do not have entrances on the border side
+
+===================================================================================
+
+Pathfinding
+
+The goal of this is to implement Dijkstras algorithm for path generation and future NPC pathfindinng
+
+The requirements are met by the following:
+
+	* Hikers and Rivals enums created
+	* Travel weights for each NPC type
+	  - Following the chart in the instruction sheet
+	* Shortest path from all points on the map to the playercharacter
+	  - uses implementation of Dijkstras algo
+	* Movement occurs in 8 directions
+	* Hiker and rival maps displayed on keypress 'd'
+	  - Display is based on example
+	* Player placeholder added to map represented by '@'
+	
+***NOTE: to display distance maps, press 'd' similarly to how you move/fly maps ***
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
